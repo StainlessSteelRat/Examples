@@ -1,0 +1,219 @@
+$color--green: #7ac142;
+$curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px $color--green;
+  }
+
+}
+
+@mixin echoplex {
+
+  // Insert your own theme rules here
+  
+  .halo-layout {
+    display: inline-block;
+    background: f0ede5;
+    border: 1px solid #3b78ce;
+  }
+  
+  .echo-logo {
+  	position: absolute;
+  	left: 100px;
+  	top: 28px;
+  	background: url("img/nrme32.png") no-repeat;
+  	height: 48px;
+  	width: 152px;
+  	z-index: 100001;
+  }
+  
+  .login-form, .signup-form, .forgot-form {
+		z-index: 3;
+		position: relative;
+		top: 35px;
+		left: 58px;
+		border-radius: 10px;
+	}
+	
+	.login-form > table, .signup-form > table, .forgot-form > table {
+	    margin-right: 22px;
+	}
+	
+	.login-form .v-button, .signup-form .v-button, .forgot-form .v-button {
+		width: 24em;
+	}
+/*	
+	.login-form .v-widget, .signup-form .v-widget, .forgot-form .v-widget {
+		text-align: center;
+	}
+*/	
+	.login-form .v-textfield, .signup-form .v-textfield, .forgot-form .v-textfield {
+		width: 24em;
+	}
+	
+	.v-label-sign-in, .v-label-signup-success, .v-label-forgot-title {
+		text-align: center;
+		font-size: 30px;
+		width: 100%;
+		font-weight: bold;
+	}
+	
+	.v-label-signup-success {
+		margin-top: 40px;
+	}
+	
+
+
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: $color--green;
+  fill: none;
+  animation: stroke .6s $curve forwards;
+}
+
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px $color--green;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke .3s $curve .8s forwards;
+}
+
+
+	
+	
+	
+	.v-label-signup-success-tick {
+		width: 100%;
+	}
+	
+	.v-label-sign-up {
+		text-align: center;
+		font-size: 30px;
+		width: 100%;
+		font-weight: bold;
+	}
+	
+	.or-label {
+		width: 100%;
+		text-align: center;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	
+	.error {
+		font-weight: bold;
+		color: darkred;
+	}
+	
+	.code-label {
+		    width: 370px;
+   			 white-space: normal;
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	
+	.code-error {
+		  width: 370px;
+   			 white-space: normal;
+		font-weight: bold;
+		color: darkred;
+	}
+	
+	.mismatch {
+		margin-top: -22px;
+		font-weight: bold;
+		color: darkred;
+	}
+	
+	.v-button-facebook {
+		background-image: linear-gradient(to bottom,#365899 2%, #365899 98%);
+		background-image: -webkit-linear-gradient(top, #365899 2%, #365899 98%);
+		color: #FFFFFF;
+		box-shadow: none;
+	}
+	
+	.v-button-twitter {
+		background-image: linear-gradient(to bottom,#1da1f2 2%, #1da1f2 98%);
+		background-image: -webkit-linear-gradient(top, #1da1f2 2%, #1da1f2 98%);
+		color: #FFFFFF;
+		box-shadow: none;
+	}
+	
+	.v-button-google {
+		background-image: linear-gradient(to bottom,#E24825 2%, #E24825 98%);
+		background-image: -webkit-linear-gradient(top, #E24825 2%, #E24825 98%);
+		color: #FFFFFF;
+		box-shadow: none;
+	}
+  
+  	.v-window {
+  		background-color: rgba(255,255,255,0.6);
+  		top: 100px !important;
+  		border-radius: 20px;
+  	}
+  	
+  	.v-window-modalitycurtain {
+  		opacity: 0.4;
+  	}
+  	
+  	.zxcvbn-indicator {
+   		   padding: 0px;
+   		 border: 1px solid darkgrey;
+    		margin-top: -16px;
+   	}
+  	.zxcvbn-indicator > span {
+  		height: 8px;
+  	}
+  	
+  	.forgot-link {
+  		width: 50px !important;
+		padding: 0px;
+		height: 24px;
+		vertical-align: top;
+  	}
+  	
+  	.forgot .v-button-wrap {
+  		font-size: 14px;	
+		margin: 0px;
+		font-weight: bold;
+  	}
+  	
+  	.captcha-wrapper {
+  		width: 24em;
+text-align: center;
+}
+  	
+}

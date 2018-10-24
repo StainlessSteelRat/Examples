@@ -1,0 +1,30 @@
+@import "../valo/valo.scss";
+@import "../../addons/hybrid-menu/hybrid-menu.scss";
+@import "echoplex.scss";
+@import "haloSidebar.scss";
+
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in haloEarth.scss */
+.echoplex {
+  @include valo;
+  @include hybrid-menu;
+  @include echoplex;
+  @include haloSidebar;
+
+
+
+	.halo-layout, .content, .v-slot-contentBox, .v-csslayout-contentBox, .v-horizontallayout-centralContent {
+		width: 100%;
+		height: 100%;
+	}
+
+	.v-widget.googlemap {
+		height: 100%;
+		width: 100%;
+	}
+	
+	.hybridMenu .contentBox {
+		padding: 0px !important;
+	}
+}
