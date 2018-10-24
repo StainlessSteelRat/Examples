@@ -1,0 +1,8 @@
+report.bean=LDAPUser
+report.query=isMemberOf=cn=BRM,cn=groups,dc=gc4,dc=io
+report.fields=uid,cn,email,phoneNo,matcherAttr,lastLogin,gen-requestcount
+report.headers=Username,Name,Email,Phone Number,Suppliers,Last Login,Request Count
+report.column.requestcount.type=db
+report.column.requestcount.query=SELECT count(*) FROM UserRequest r where r.approver = :p0 
+report.column.requestcount.param.0=uid
+

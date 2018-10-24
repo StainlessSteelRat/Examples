@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE ivy-module [
+	<!ENTITY vaadin.version "7.7.7">
+]>
+<ivy-module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    version="2.0"
+    xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd" > 
+
+    <info module="v7proj" organisation="com.vodafone" />
+
+    <configurations>
+        <!-- The default configuration, which should be deployed to the server -->
+        <conf name="default" />
+        
+        <!--
+             A configuration only needed when compiling the widget set. Should 
+			not be deployed to the server
+        -->
+        <conf name="widgetset-compile" />
+        
+        <!--
+             A configuration used in compilation of server side classes only.
+			Should be deployed to the server
+        -->
+        <conf name="nodeploy" />
+    </configurations>
+    
+    <dependencies defaultconf="default" defaultconfmapping="default->default" >
+
+        <!-- The core server part of Vaadin -->
+        <dependency name="vaadin-server" org="com.vaadin" rev="&vaadin.version;" />
+        <dependency name="vaadin-themes" org="com.vaadin" rev="&vaadin.version;" />
+        <dependency name="vaadin-push" org="com.vaadin" rev="&vaadin.version;" />
+        <dependency name="vaadin-client-compiled" org="com.vaadin" rev="&vaadin.version;" />
+        <dependency name="vaadin-client" org="com.vaadin" rev="&vaadin.version;" /> 
+        <dependency name="vaadin-client-compiler" org="com.vaadin" rev="&vaadin.version;" /> 
+        <dependency org="com.vaadin" name="vaadin-icons" rev="2.0.0" />
+        
+	    <dependency org="ru.xpoft.vaadin" name="spring-vaadin-integration" rev="3.2" />
+	    <dependency org="org.vaadin.addons" name="animator" rev="2.0.0" />
+    	<dependency org="org.vaadin.addons" name="dom" rev="0.1.0" />
+    	<dependency org="org.vaadin.addons" name="filteringtable" rev="0.9.15.v7" />
+    	<dependency org="com.vaadin.addon" name="vaadin-charts" rev="1.1.6" />
+    	<dependency org="org.vaadin.addons" name="listbuilder" rev="0.7.3.v7" />
+    	<dependency org="org.vaadin.addons" name="flexibleoptiongroup" rev="2.3.0" />
+    	<dependency org="com.vaadin.addon" name="vaadin-spreadsheet" rev="1.1.6" />
+    	<dependency org="de.steinwedel.vaadin.addon" name="messagebox" rev="3.0.19" />
+    	<dependency org="org.vaadin.addons" name="zxcvbn" rev="0.1.1.v7" />
+    	<dependency org="com.vaadin.addon"  name="tableexport-for-vaadin"  rev="1.6.2" />
+    <dependency org="nz.co.exium"  name="vaadin-navdrawer"  rev="1.19" />
+    	
+    	
+    	
+    	<dependency org="org.apache.httpcomponents" name="httpclient" rev="4.4"/>
+    	<dependency org="org.apache.poi" name="poi" rev="3.11-beta2"/>
+    	<dependency org="javax.mail" name="javax.mail-api" rev="1.5.6"/>
+    	<dependency org="com.sun.mail" name="javax.mail" rev="1.5.6"/>
+    	<dependency org="it.sauronsoftware.cron4j" name="cron4j" rev="2.2.5"/>
+    	<dependency org="com.jcraft" name="jsch" rev="0.1.51"/>
+    	<dependency org="org.apache-extras.camel-extra" name="camel-jcifs" rev="2.14.1" />
+	   
+	    <dependency org="com.mchange" name="c3p0" rev="0.9.2.1"/> 
+	    <dependency org="mysql" name="mysql-connector-java" rev="5.1.32" />
+	    <!-- <dependency org="com.oracle" name="ojdbc14" rev="10.2.0.4.0" /> -->
+	    
+	    <dependency org="commons-collections" name="commons-collections" rev="3.2.1"/>
+	    
+	    <dependency org="log4j" name="log4j" rev="1.2.17" />
+	    <dependency org="org.slf4j" name="slf4j-api" rev="1.7.7"/>
+    	<dependency org="org.slf4j" name="slf4j-log4j12" rev="1.7.7"/>
+  
+		<dependency org="org.aspectj" name="aspectjweaver" rev="1.8.0.M1" />
+		
+		<dependency org="javax.servlet.jsp.jstl" name="jstl-api" rev="1.2"/>
+		<dependency org="taglibs" name="standard" rev="1.1.2"/>
+		
+		<dependency org="it.sauronsoftware.cron4j" name="cron4j" rev="2.2.5"/>  
+		
+		<dependency org="org.hibernate" name="hibernate-core" rev="3.6.10.Final"/>
+    	<dependency org="org.hibernate" name="hibernate-entitymanager" rev="3.6.10.Final"/>
+    	<!-- <dependency org="org.hibernate" name="hibernate-c3p0" rev="3.6.10.Final"/> -->
+		
+	    <dependency org="org.springframework" name="spring-core" rev="4.0.0.RELEASE" />
+        <dependency org="org.springframework" name="spring-context" rev="4.0.0.RELEASE" /> 
+        <dependency org="org.springframework" name="spring-beans" rev="4.0.0.RELEASE" />
+        <dependency org="org.springframework" name="spring-orm" rev="4.0.0.RELEASE" />
+        <dependency org="org.springframework" name="spring-web" rev="4.0.0.RELEASE" />      
+		<dependency org="org.springframework" name="spring-aspects" rev="4.0.0.RELEASE" /> 
+		<dependency org="org.springframework" name="spring-webmvc" rev="4.0.0.RELEASE" />  
+		
+		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.4.3"/>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.4.3"/>
+	
+		       
+        <dependency org="org.springframework.security" name="spring-security-ldap" rev="3.2.0.RELEASE" />
+        <dependency org="org.springframework.security" name="spring-security-core" rev="3.2.0.RELEASE" />
+        <dependency org="org.springframework.security" name="spring-security-acl" rev="3.2.0.RELEASE" />
+        <dependency org="org.springframework.security" name="spring-security-taglibs" rev="3.2.0.RELEASE" />
+        <dependency org="org.springframework.security" name="spring-security-crypto" rev="3.2.0.RELEASE" />
+        <dependency org="org.springframework.security" name="spring-security-config" rev="3.2.0.RELEASE" />
+        <dependency org="org.springframework.security" name="spring-security-cas" rev="3.2.0.RELEASE" />
+        <dependency org="org.springframework.security" name="spring-security-aspects" rev="3.2.0.RELEASE"/>
+        
+        <dependency org="com.hazelcast" name="hazelcast" rev="3.5.1"/>
+        <dependency org="com.hazelcast" name="hazelcast-client" rev="3.5.1"/>
+        
+    </dependencies>
+
+</ivy-module>

@@ -1,0 +1,4 @@
+report.bean=UserRequest
+report.query=SELECT * FROM UserRequest r ORDER BY r.id
+report.fields=id, created, username, msg
+report.headers=ID, Created Date, Username, Message

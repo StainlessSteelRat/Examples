@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans 
+    xmlns:s="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	    http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+			  
+    <s:global-method-security secured-annotations="enabled"/>
+    
+    <beans:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <beans:property name="basename" value="classpath:org/springframework/security/messages"/>
+    </beans:bean>  
+	 
+	<s:http pattern="/favicon.ico" security="none"/>	
+	<s:http pattern="/login/**" security="none" />
+	<s:http pattern="/api/**" security="none"/>
+    <s:http pattern="/public/**" security="none"/>
+	<s:http pattern="/VAADIN/themes/login/**" security="none" />
+	<s:http pattern="/VAADIN/**" security="none" />
+
+		   
+	<beans:bean id="authenticationHandler" class="com.collectivesystems.idm.LoginListener">
+	    <beans:constructor-arg value="/halo"/>
+	    <beans:constructor-arg value="/login?login_error=1"/>
+	</beans:bean>
+	
+    
+     <s:http use-expressions="true" access-denied-page="/login" access-decision-manager-ref="accessDecisionManager">
+         <s:intercept-url pattern="/**" access="hasRole('ROLE_USER')" />
+
+         <s:form-login authentication-failure-handler-ref="authenticationHandler" authentication-success-handler-ref="authenticationHandler" login-page="/login" authentication-failure-url="/login?login_error=1" />
+         <s:logout logout-success-url="/halo#logged-out" delete-cookies="JSESSIONID" invalidate-session="true" />
+         <!-- <s:remember-me data-source-ref="dataSource" user-service-ref="jdbcUserService"/>  -->
+
+         <s:session-management invalid-session-url="/login"/>
+         <s:session-management>
+             <s:concurrency-control max-sessions="1" error-if-maximum-exceeded="true" expired-url="/login"/>
+         </s:session-management>
+
+    </s:http>
+   
+    
+
+    <!-- Automatically receives AuthenticationEvent messages -->
+    <beans:bean id="loggerListener" class="org.springframework.security.authentication.event.LoggerListener"/>
+    
+	<!-- Filter used to switch the user context. Note: the switch and exit url must be secured
+        based on the role granted the ability to 'switch' to another user -->
+    <!-- In this example 'rod' has ROLE_SUPERVISOR that can switch to regular ROLE_USER(s) -->
+    <beans:bean id="switchUserProcessingFilter" class="org.springframework.security.web.authentication.switchuser.SwitchUserFilter" autowire="byName">
+       <beans:property name="targetUrl" value="/halo"/>
+       <beans:property name="userDetailsService" ref="jdbcUserService"/>
+    </beans:bean>
+	<!-- 
+    <beans:bean id="expressionHandler" class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
+        <beans:property name="permissionEvaluator" ref="permissionEvaluator"/>
+        <beans:property name="permissionCacheOptimizer">
+            <beans:bean class="org.springframework.security.acls.AclPermissionCacheOptimizer">
+                <beans:constructor-arg ref="aclService"/>
+            </beans:bean>
+        </beans:property>
+    </beans:bean>
+ 	-->
+ 	<!-- 
+    <beans:bean id="permissionEvaluator" class="org.springframework.security.acls.AclPermissionEvaluator">
+        <beans:constructor-arg ref="aclService"/>
+    </beans:bean>
+     -->
+	
+        <beans:bean id="roleHierarchy" class="com.collectivesystems.core.helpers.HaloRoleHierarchy">
+                <beans:property name="hierarchy">
+                        <beans:value>
+                      ROLE_IDM_ADMIN > ROLE_EUAA_ADMIN
+                      ROLE_EUAA_ADMIN > ROLE_EUAA                      
+                      ROLE_EUAA > ROLE_USER        
+                      ROLE_BRM > ROLE_USER                
+                    </beans:value>
+                </beans:property>
+        </beans:bean>
+
+        <beans:bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+                <beans:property name="decisionVoters">
+                        <beans:list>
+                       <beans:ref bean="roleHierarchyVoter" />
+                       <beans:bean class="org.springframework.security.web.access.expression.WebExpressionVoter">
+                           <beans:property name="expressionHandler">
+                            <beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler">
+                               <beans:property name="roleHierarchy" ref="roleHierarchy"/>
+                            </beans:bean>
+                        </beans:property>
+                       </beans:bean>
+                       <beans:bean class="org.springframework.security.access.vote.AuthenticatedVoter"/>
+                    </beans:list>
+                </beans:property>
+        </beans:bean>
+
+        <beans:bean id="roleHierarchyVoter" class="org.springframework.security.access.vote.RoleHierarchyVoter">
+          <beans:constructor-arg ref="roleHierarchy" />
+        </beans:bean>
+	
+	 
+	
+</beans:beans>

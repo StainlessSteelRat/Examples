@@ -1,0 +1,16 @@
+report.bean=LDAPUser
+report.query=isMemberOf=cn=EUAA,cn=groups,dc=gc4,dc=io
+report.fields=uid,cn,email,phoneNo,matcherAttr,lastLogin,gen-requestcount,gen-createcount,gen-updatecount,gen-enablecount
+report.headers=Username,Name,Email,Phone Number,Supplier,Last Login,Request Count,Create,Update,Enable
+report.column.requestcount.type=db
+report.column.requestcount.query=SELECT count(*) FROM UserRequest r where r.requester = :p0 
+report.column.requestcount.param.0=uid
+report.column.createcount.type=db
+report.column.createcount.query=SELECT count(*) FROM UserRequest r where r.requester = :p0 AND r.action = 0
+report.column.createcount.param.0=uid
+report.column.updatecount.type=db
+report.column.updatecount.query=SELECT count(*) FROM UserRequest r where r.requester = :p0 AND r.action = 1
+report.column.updatecount.param.0=uid
+report.column.enablecount.type=db
+report.column.enablecount.query=SELECT count(*) FROM UserRequest r where r.requester = :p0 AND r.action = 4
+report.column.enablecount.param.0=uid

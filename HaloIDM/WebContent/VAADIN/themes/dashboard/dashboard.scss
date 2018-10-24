@@ -1,0 +1,70 @@
+@import "../valo/valo.scss";
+
+@import "components/haloMenubar.scss";
+
+@import "views/idm-requester.scss";
+@import "views/overview.scss";
+
+
+
+
+@mixin dashboard {
+	
+	@include valo;
+	@include dashboard-idm-requester-view;
+	@include idm-stats-view;
+
+	@include haloMenubar;
+
+	.v-app, .v-app-loading {
+		background: #FFFFFF;
+	}
+		
+	.halo-layout {
+		background: #FFFFFF;
+	}
+	
+	.v-view {
+		overflow: hidden;
+	}
+	
+	.v-spacing {
+		width: 6px;
+	}
+	
+	.v-horizontal > .v-slot {
+		vertical-align: middle;
+	}
+	
+	.mail-util-content > .v-slot {
+		vertical-align: top;
+	}
+	
+	.mail-util-content {
+		padding: 5px;
+	}
+	
+	.console-wrapper {
+		padding: 5px;
+	}
+
+	[class*="margin-top"] > tbody > [class*="firstrow"] > td {
+    	padding-top: 15px;
+	}
+	
+	[class*="margin-bottom"] > tbody > [class*="lastrow"] > td {
+    	padding-bottom: 10px;
+	}
+	
+	[class*="spacing"] > tbody > [class*="row"] > td {
+    	padding-top: 0px;
+    }
+
+	.v-formlayout-lastrow .v-horizontallayout {
+		margin-top: 20px;
+	}
+	
+	.v-caption-file-upload {
+		display: none;
+	}
+}

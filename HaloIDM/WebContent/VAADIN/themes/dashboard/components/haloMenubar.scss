@@ -1,0 +1,308 @@
+
+@mixin haloMenubar {
+
+	.halo-menubar {
+		background: #414243 url(../img/sidebar-gradient.png) repeat-y top right;
+		/* @include move-right; */
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		float: left;
+		width: 110px;
+	}
+	
+	.halo-menubar .branding {
+		border-bottom: 1px solid #353637;
+		position: relative;
+		-webkit-font-smoothing: antialiased;
+	}
+	
+	.halo-menubar .branding .v-label {
+		position: relative;
+		z-index: 2;
+		
+		white-space: normal;
+		font-size: 16px;
+		line-height: 1.1;
+		color: #fff;
+		text-shadow: 0 2px 2px rgba(0,0,0,.5);
+		
+		/* WTH? Why is inline-block forced as an inline style? */
+		display: block !important;
+		padding: .8em .8em 1.2em;
+		
+		//@include box-shadow(inset 0 0 5px 2px rgba(0,0,0,.5));
+	}
+	
+	.halo-menubar .branding .v-label span {
+		font-size: 13px;
+		color: #d0d1d3;
+		display: block;
+	}
+	
+	.halo-menubar .branding .v-image {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	
+	.halo-menubar .menu {
+		overflow: auto;
+		height: 100%;
+	}
+	
+	.halo-menubar .menu .v-ddwrapper {
+		padding: 2px;
+	}
+	
+	.halo-menubar .menu .v-ddwrapper .v-nativebutton {
+		margin: -2px -2px;
+	}
+	
+	.halo-menubar .menu .v-ddwrapper-over {
+		padding: 0;
+		border: 2px solid #2d90f3;
+		background: transparent;
+		
+	}
+	
+	.halo-menubar .menu .v-nativebutton {
+		/* TODO mixin */
+		-webkit-appearance: none;
+		
+		display: block;
+		padding: 10px 20px 10px;
+		width: 100%;
+		border: none;
+		margin: 0;
+		position: relative;
+		
+		border-top: 1px solid #4b4c4d;
+		border-top-color: rgba(255,255,255,.05);
+		
+		border-bottom: 1px solid #353637;
+		border-bottom-color: rgba(0,0,0,.18);
+		
+		background: transparent;
+		
+		color: #888a8c;
+		font-weight: normal;
+		text-shadow: 0 1px 0 rgba(0,0,0,.5);
+		text-align: center;
+		
+		/* TODO mixin */
+		/* 		-webkit-transition: color ease-in-out 100ms, background-color linear 60ms; */
+		/* 		-moz-transition: color ease-in-out 100ms, background-color linear 60ms; */
+		/* 		transition: color ease-in-out 100ms, background-color linear 60ms; */
+	}
+	
+	.halo-menubar .menu:after {
+		content: "";
+		display: block;
+		border-top: 1px solid #4b4c4d;
+		border-top-color: rgba(255,255,255,.05);
+		height: 0;
+	}
+	
+	.halo-menubar .menu .v-nativebutton-caption {
+		font-size: 12px;
+		font-weight: 600;
+		text-transform: uppercase;
+		display: block;
+		margin: .2em 0 0 0;
+	}
+	
+	.halo-menubar .menu .v-nativebutton:focus {
+		outline: none;
+	}
+	
+	.halo-menubar .menu .v-nativebutton:hover,
+	.halo-menubar .menu .v-nativebutton:focus {
+		color: #e1e1e1;
+	}
+	
+	.halo-menubar .menu .v-nativebutton:before {
+		font-size: 24px;
+		line-height: 1;
+		margin: 0;
+	}
+	
+	.v-webkit & .menu .v-nativebutton:before {
+		/* TODO mixin */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e8e8), color-stop(100%,#d3d3d3));
+		background: -webkit-linear-gradient(top, #fff 0%,#777 100%);
+	/* 	background: linear-gradient(to bottom, #e8e8e8 0%,#d3d3d3 100%); */
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-shadow: 0 1px 1px rgba(0,0,0,.2);
+		opacity: .5;
+		
+		/* TODO mixin */
+		-webkit-transition: opacity ease-in-out 200ms;
+		-moz-transition: opacity ease-in-out 200ms;
+		-ms-transition: opacity ease-in-out 200ms;
+		-o-transition: opacity ease-in-out 200ms;
+		transition: opacity ease-in-out 200ms;
+	}
+	
+	.v-webkit & .menu .v-nativebutton:hover:before,
+	.v-webkit & .menu .v-nativebutton:focus:before {
+		opacity: 1;
+	}
+	
+	.halo-menubar .menu .v-nativebutton:active {
+		background: rgba(0,0,0,.1);
+	}
+	
+	.halo-menubar .menu .v-nativebutton.selected {
+		color: #e1e1e1;
+		text-shadow: 0 2px 2px rgba(0,0,0,.5);
+		
+		border-top-color: #262729;
+		border-bottom-color: #2b2c2e;
+		
+		background: #333537;
+		
+		/* TODO mixin */
+		background: -moz-linear-gradient(top, #2d2f30 0%, #333537 10%, #333537 90%, #2d2f30 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2d2f30), color-stop(10%,#333537), color-stop(90%,#333537), color-stop(100%,#2d2f30));
+		background: -webkit-linear-gradient(top, #2d2f30 0%,#333537 10%,#333537 90%,#2d2f30 100%);
+		background: -o-linear-gradient(top, #2d2f30 0%,#333537 10%,#333537 90%,#2d2f30 100%);
+		background: -ms-linear-gradient(top, #2d2f30 0%,#333537 10%,#333537 90%,#2d2f30 100%);
+	/* 	background: linear-gradient(to bottom, #2d2f30 0%,#333537 10%,#333537 90%,#2d2f30 100%); */
+	
+		-webkit-transition: none;
+	}
+	
+	.v-webkit & .menu .v-nativebutton.selected:before {
+		text-shadow: none;
+		opacity: 1;
+	}
+	
+	.badge,
+	.notifications .v-button-caption {
+		display: inline-block;
+		font-size: 11px;
+		line-height: 1;
+		color: #fff;
+		text-shadow: 0 1px 1px rgba(0,0,0,.3);
+		padding: .1em .4em .2em;
+		
+		background: #f16433;
+		
+		/* TODO mixin */
+		background: -moz-linear-gradient(top, #faa290 0%, #f77b62 14%, #ec3120 87%, #ce2314 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#faa290), color-stop(14%,#f77b62), color-stop(87%,#ec3120), color-stop(100%,#ce2314));
+		background: -webkit-linear-gradient(top, #faa290 0%,#f77b62 14%,#ec3120 87%,#ce2314 100%);
+		background: -o-linear-gradient(top, #faa290 0%,#f77b62 14%,#ec3120 87%,#ce2314 100%);
+		background: -ms-linear-gradient(top, #faa290 0%,#f77b62 14%,#ec3120 87%,#ce2314 100%);
+		/* Sass compiler chokes on this */
+		/* background: linear-gradient(to bottom, #faa290 0%,#f77b62 14%,#ec3120 87%,#ce2314 100%); */
+		/*
+		@include border-radius(2px);
+		
+		@include box-shadow(0 1px 1px rgba(0,0,0,.3));
+		*/
+	}
+	
+	.menu .v-nativebutton .badge {
+		position: absolute;
+		top: 6px;
+		right: 8px;
+	}
+	
+	
+	
+	
+	.halo-menubar .user {
+		display: block;
+		
+		border-top: 1px solid #303132;
+		background: #3b3c3d;
+		background-color: rgba(0,0,0,.1);
+		
+		color: #898c8e;
+		text-shadow: 0 1px 1px rgba(0,0,0,.5);
+		/*
+		@include box-shadow(inset 0 1px 0 rgba(255,255,255,.08));
+		*/
+	}
+	
+	.halo-menubar .user > .v-slot {
+		display: inline-block;
+		width: 50%;
+	}
+	
+	.halo-menubar .user > .v-slot:first-child {
+		width: 34px;
+	}
+	
+	.halo-menubar .user .v-image {
+		width: 34px;
+		height: 34px;
+		border-right: 1px solid #313132;
+	}
+	
+	.halo-menubar .user .v-label {
+		white-space: normal;
+		font-size: 12px;
+		line-height: 14px;
+		font-weight: 600;
+		max-width: 50px;
+		overflow: visible;
+		padding: 2px 8px;
+		height: 34px;
+		color: inherit;
+		-webkit-font-smoothing: antialiased;
+	}
+	
+	.halo-menubar .user .v-nativebutton,
+	.halo-menubar .user .v-menubar {
+		/* TODO mixin */
+		-webkit-appearance: none;
+		
+		border: none;
+		border-top: 1px solid #303132;
+		background: transparent;
+		width: 100%;
+		padding: 0;
+		
+		color: inherit;
+	}
+	
+	.halo-menubar .user .v-nativebutton:focus {
+		outline: none;
+	}
+	
+	.halo-menubar .user .v-nativebutton:hover,
+	.halo-menubar .user .v-menubar-menuitem:hover {
+		color: #e1e1e1;
+	}
+	
+	.halo-menubar .user .v-nativebutton-caption {
+		display: none;
+	}
+	
+	.halo-menubar .user .v-nativebutton:before,
+	.halo-menubar .user .v-menubar-menuitem:before {
+		font-size: 16px;
+		margin: 0;
+		display: block;
+		border-top: 1px solid #434445;
+		padding: .3em 0 .4em;
+	}
+	
+	.halo-menubar .user .v-menubar-menuitem {
+		border-right: 1px solid #434445;
+		display: block !important;
+		cursor: pointer;
+	}
+	
+	.halo-menubar .user .icon-cancel {
+		border-left: 1px solid #303132;
+	}
+	
+}

@@ -1,0 +1,72 @@
+@mixin dashboard-logs-view {
+
+	.sftp-logs {
+		margin: 0px;
+		width: auto;
+		height: 100%;
+		overflow: hidden;
+		display: block;
+		padding: 5px
+	}
+
+
+	.sftp-logs .layout-toolbar {
+		margin-bottom: 10px;
+	}
+	
+	
+	
+	.sftp-logs .v-label-status-panel {
+		color: darkblue;
+		font-size: 12px;
+		border-bottom: 1px solid darkblue;
+		margin-top: 0px;
+		margin-bottom: 10px;
+	}
+	
+	.sftp-logs .storeTable {
+		float: left;
+	}
+	
+	.sftp-logs .addStoreTop {
+		float: left;
+		margin-top: 100px;
+		margin-bottom: 20px;
+	}
+	
+	.sftp-logs .addStoreBottom {
+		float: left;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+		
+	.sftp-logs .v-table-cell-wrapper {
+		font-size: 12px;
+	}
+	
+	.sftp-logs .v-table-cell-wrapper .v-label {
+		font-size: 12px;
+	}
+	
+	.sftp-logs .layout-toolbar .v-caption {
+    	display: inline-block;
+    	padding-right: 3px;
+    	vertical-align: middle;
+    	font-size: 14px;
+	}
+	
+	.sftp-logs .layout-toolbar .v-button {
+		margin-right: 5px;
+	}	
+	
+	.sftp-logs .layout-toolbar .v-widget {
+		margin-right: 15px;
+	}
+	
+	.sftp-logs .layout-toolbar .v-datefield-button {
+		height: 24px;
+		vertical-align: middle;
+	}
+	
+	
+}

@@ -1,0 +1,225 @@
+@mixin dashboard-sftp-view {
+
+	.sftp-view {
+		padding: 5px;
+		overflow-y: auto;
+	}
+	
+	.sftp-view .v-button-wrap, .sftp-view .v-button-caption {
+		 font-size: 11px;
+	} 
+	
+	.sftp-view .v-table-caption-container {
+    	font-size: 11px;
+	}
+	
+	.sftp-view .v-widget {
+	   font-size: 11px;
+	   vertical-align: middle;
+	  
+	}
+	
+	.sftp-view .v-filterselect {
+		padding: 2px;
+	}
+
+	.sftp-view .v-textfield {
+		height: 24px;
+	}
+
+	.sftp-view .v-formlayout .v-formlayout-captioncell {
+		vertical-align: middle;
+	}
+	
+	.sftp-view .form-upload {
+		padding-top: 0px;
+	}
+	
+	.sftp-view .v-caption-form-upload {
+		border-bottom: 1px solid darkblue;
+	}
+		
+	.sftp-view .v-caption-form-upload .v-captiontext {
+		font-size: 12px;
+		color: darkblue;
+	}
+	
+	.sftp-view .upload-wrapper .v-caption-form-upload .v-captiontext > span {
+		color: darkgrey;
+		display: none;
+	}
+	
+	.sftp-view .upload-wrapper:hover .v-caption-form-upload .v-captiontext > span {
+		display: inline-block;
+	}
+	
+	.sftp-view .iz-wrapper .v-label-status-panel > span {
+		color: darkgrey;
+		display: none;
+	}
+	
+	.sftp-view .iz-wrapper:hover .v-label-status-panel > span {
+		display: inline-block;
+	}
+	
+	.sftp-view .tx-wrapper .v-label-status-panel > span {
+		color: darkgrey;
+		display: none;
+	}
+	
+	.sftp-view .tx-wrapper:hover .v-label-status-panel > span {
+		display: inline-block;
+	}
+	
+	
+	.sftp-view .v-caption {
+		font-size: 10px;	
+	}
+	
+	
+	
+	.sftp-view .v-label-status-panel {
+		color: darkblue;
+		font-size: 12px;
+		border-bottom: 1px solid darkblue;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+	
+	.sftp-view .v-label-mime-denied {
+		color: darkred;
+		font-style: bold;
+	}
+	
+	.sftp-view .v-label-mime-allowed {
+		color: darkgreen;
+		font-style: normal;
+	}
+	
+	.sftp-view .form-tx-status {
+		padding-top: 0px !important;
+		padding-left: 5px !important;
+		padding-bottom: 5px;
+	}
+	
+	.sftp-view .form-directory {
+		padding-left: 46px;
+	}
+	
+	.sftp-view .form-directory .v-caption {
+    	display: inline-block;
+    	padding-right: 12px;
+    	vertical-align: middle;
+	}
+	
+	.sftp-view .form-directory .v-formlayout-contentcell {
+		padding-right: 6px !important;
+	}
+	
+	
+	.sftp-view .v-table-row.v-selected .v-button-caption, .sftp-view .v-table-row-odd.v-selected .v-button-caption {
+    	color:white; 
+    }  
+    
+    .sftp-view .v-table-cell-wrapper {
+		font-size: 10px;
+	}
+	
+	.sftp-view .v-table-cell-wrapper .v-label {
+		font-size: 10px;
+	}
+
+	.sftp-view .layout-info-bar .v-caption {
+    	display: inline-block;
+    	padding-right: 3px;
+	}
+	
+	.sftp-view .layout-info-bar .v-label {
+    	margin-right: 10px;
+	}
+	
+	.sftp-view .form-tx-actions {
+		vertical-align: top;
+		padding-top: 71px;
+		display: inline-block;
+	}
+	
+	.sftp-view .form-tx-actions .v-button {
+		display: block;
+		margin-bottom: 4px;
+	}
+	
+	.sftp-view .label-selected-file {
+		font-size: 10px;
+		color: darkgreen;
+	}
+	
+	.sftp-view .form-profiles {
+		padding-left: 41px;
+		margin-bottom: 10px;
+		margin-top:6px;
+	}
+	
+	.sftp-view .form-profiles .v-widget {
+		display: inline-block;
+		margin-right: 5px;
+	}
+	
+	.sftp-view .form-profiles .v-caption {
+    	display: inline-block;
+    	padding-right: 12px;
+    	vertical-align: middle;
+    	height: 20px;
+	}
+	
+	.sftp-view .form-host {
+		padding-left: 16px;
+		padding-top: 0px !important;
+		vertical-align: middle;
+	}
+	
+	.sftp-view .form-host .v-caption {
+    	height: 20px;
+	}
+	.sftp-view .form-host .v-caption > span {
+		vertical-align: middle;
+	}
+	
+	.sftp-view .form-save-profiles {
+		padding-left: 15px;
+		margin-bottom: 10px;
+	}
+	
+	.sftp-view .form-save-profiles .v-widget {
+		display: inline-block;
+		margin-right: 5px;
+	}
+	
+	.sftp-view .form-save-profiles .v-caption {
+    	display: inline-block;
+    	padding-right: 12px;
+    	vertical-align: middle;
+    	height: 20px;
+	}
+	
+	.sftp-view .v-filterselect-input {
+	    font-size: 11px;
+	}
+	
+	.sftp-view .v-filterselect-button {
+		top: 0.8em;
+	}
+	
+	.v-filterselect-suggestpopup .gwt-MenuItem-selected, .v-filterselect-suggestpopup .gwt-MenuItem {
+		font-size: 11px;
+	}
+	
+	.icon-dashboard.v-nativebutton:before, .icon-Secure > .v-button-wrap:before, .icon-Secure.v-label:before, .v-menubar-menuitem-icon-Secure:before {
+    	content: "⇄";
+	}
+	
+	
+	
+	
+	
+}

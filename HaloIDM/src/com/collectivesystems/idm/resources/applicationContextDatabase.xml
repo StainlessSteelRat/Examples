@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+   
+
+   
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="jdbcUserService" class="org.springframework.security.provisioning.JdbcUserDetailsManager">
+	    <property name="dataSource" ref="dataSource"/>
+	    <property name="enableGroups" value="true"/>
+	    <property name="enableAuthorities" value="true"/>
+	</bean>
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		
+		<property name="annotatedClasses">
+			<list>
+				<value>com.collectivesystems.core.beans.spring.User</value>
+				<value>com.collectivesystems.core.beans.spring.Group</value>
+				<value>com.collectivesystems.core.beans.spring.GroupMember</value>
+				<value>com.collectivesystems.core.beans.spring.Authority</value>
+				<value>com.collectivesystems.core.beans.Monitor</value>	
+				<value>com.collectivesystems.core.beans.Tweet</value>	
+				
+		
+				
+				<value>com.collectivesystems.idm.beans.UserRequest</value>	
+				<value>com.collectivesystems.idm.beans.UserRequestArchive</value>	
+				<value>com.collectivesystems.idm.beans.MailLog</value>	
+				<value>com.collectivesystems.idm.beans.sgd.SGDAuditItem</value>	
+				<value>com.collectivesystems.idm.beans.sgd.Tracked</value>	
+				<value>com.collectivesystems.idm.beans.DecommItem</value>	
+				
+					
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">com.collectivesystems.core.helpers.CSDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.c3p0.minPoolSize">5</prop>
+   				<prop key="hibernate.c3p0.maxPoolSize">20</prop>
+				<prop key="hibernate.c3p0.timeout">600</prop>
+				<prop key="hibernate.c3p0.max_statement">50</prop>
+				<prop key="hibernate.c3p0.testConnectionOnIn">true</prop>
+				<prop key="hibernate.c3p0.idle_test_period">100</prop>	
+				<prop key="hibernate.c3p0.idleConnectionTestPeriod">100</prop>	
+				<!-- <prop key="hibernate.c3p0.preferredTestQuery">select 1</prop> -->
+				<prop key="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</prop>
+			</props>
+		</property>
+	</bean>
+	
+	 
+	<bean id="CSDAO" class="com.collectivesystems.core.dao.CSDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+	
+	<!-- <bean id="AV" class="com.collectivesystems.sft.services.service.ClamAV"/>  -->
+        
+</beans>

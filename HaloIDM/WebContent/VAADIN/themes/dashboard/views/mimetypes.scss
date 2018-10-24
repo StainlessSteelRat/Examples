@@ -1,0 +1,44 @@
+@mixin dashboard-mimetypes-view {
+
+	.sftp-mime-types-view {
+		margin: 0px;
+		width: auto;
+		height: 100%;
+		overflow: hidden;
+		display: block;
+		padding: 5px
+	}
+
+	.sftp-mime-types-view .v-table-cell-wrapper {
+		font-size: 11px;
+	}
+	
+	.sftp-mime-types-view .v-label-status-panel {
+		color: darkblue;
+		font-size: 12px;
+		border-bottom: 1px solid darkblue;
+		margin-top: 0px;
+		margin-bottom: 10px;
+	}
+	
+	.sftp-mime-types-view .layout-toolbar {
+		margin-bottom: 10px;
+	}
+	
+	.sftp-mime-types-view .layout-toolbar .v-caption {
+    	display: inline-block;
+    	padding-right: 3px;
+    	vertical-align: top;
+    	font-size: 12px;
+	}
+	
+	.sftp-mime-types-view .layout-toolbar .v-button {
+		margin-right: 5px;
+	}	
+	
+	.sftp-mime-types-view .layout-toolbar .v-textfield {
+		margin-right: 15px;
+		width: 20em !important;
+	}
+	
+}

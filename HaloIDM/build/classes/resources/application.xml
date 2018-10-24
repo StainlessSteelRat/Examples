@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans
+    xmlns:s="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    					http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security
+                        http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+  
+ 	<beans:bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+    <!--  <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> -->
+       
+         <!--  
+        <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="jdbcUrl" value="jdbc:oracle:thin:@//127.0.0.1:33004/ACGMONT_TAF.prod.uk"/>
+       -->
+        <beans:property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <beans:property name="jdbcUrl" value="jdbc:mysql://db.gc4.io:3306/ff?autoReconnect=true"/>
+         
+        <beans:property name="user" value="filefuse"/>
+        <beans:property name="password" value="filefuse"/>
+    </beans:bean>
+    
+    
+    <beans:bean id="contextSource" class="org.springframework.security.ldap.DefaultSpringSecurityContextSource">
+  		<beans:constructor-arg value="ldap://ea-ldap001.gc4.io:389/dc=gc4,dc=io"/>
+  		<beans:property name="userDn" value="cn=Directory Manager"/>
+ 		<beans:property name="password" value="delenn@77"/>
+	</beans:bean>
+	
+    <beans:bean id="userDetailsContextMapper" class="org.springframework.security.ldap.userdetails.LdapUserDetailsMapper"></beans:bean>
+
+	<beans:bean id="ldapAuthProvider" class="org.springframework.security.ldap.authentication.LdapAuthenticationProvider">
+	 <beans:constructor-arg>
+	   <beans:bean class="org.springframework.security.ldap.authentication.BindAuthenticator">
+	     <beans:constructor-arg ref="contextSource"/>
+	     <beans:property name="userDnPatterns">
+	       <beans:list><beans:value>uid={0},cn=users</beans:value></beans:list>
+	     </beans:property>
+	   </beans:bean>
+	 </beans:constructor-arg>
+	 <beans:constructor-arg>
+	   <beans:bean class="org.springframework.security.ldap.userdetails.DefaultLdapAuthoritiesPopulator">
+	     <beans:constructor-arg ref="contextSource"/>
+	     <beans:constructor-arg value="cn=groups"/>
+	     <beans:property name="groupRoleAttribute" value="cn"/>
+	     <beans:property name="searchSubtree" value="true"/>
+	   </beans:bean>
+	 </beans:constructor-arg>
+	</beans:bean>
+           
+
+    <s:authentication-manager alias="authenticationManager">
+        <s:ldap-authentication-provider 
+            group-search-filter="uniqueMember={0}"
+            group-search-base="cn=groups"
+            user-search-base="cn=users"
+            user-search-filter="uid={0}"
+            user-details-class="person"
+        />
+    </s:authentication-manager>
+    
+</beans:beans>

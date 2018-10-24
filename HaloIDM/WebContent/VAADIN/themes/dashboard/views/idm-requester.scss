@@ -1,0 +1,234 @@
+@mixin dashboard-idm-requester-view {
+
+	
+	.v-filterselect-orgcombobox {
+		margin-left: 44px;
+	}
+	
+	.layout-info-bar .v-button-wrap .v-icon {
+		height: 26px;
+		width: 26px;
+	}
+
+	.idm-requester-view {
+		padding: 5px;
+		overflow-y: auto;
+	}
+	
+	.idm-requester-view .layout-info-bar {
+		margin-bottom: 5px;
+		
+		
+	}
+	
+	.idm-requester-view .v-label-sep {
+		margin-left: 4px;
+		margin-right: 4px;
+	}
+	.idm-requester-view .v-button-wrap, .idm-requester-view .v-button-caption {
+		 font-size: 12px;
+	} 
+	
+	.idm-requester-view .v-table-caption-container {
+    	font-size: 12px;
+    	font-weight: bold;
+	}
+	
+	.idm-requester-view .iz-status-label {
+		font-weight: bold;
+	}
+	
+	.idm-requester-view .v-widget {
+	   font-size: 12px;
+	   vertical-align: middle;
+	  
+	}
+	
+	.v-table-table {
+		box-shadow: none;
+	}
+	
+	.v-table-table td {
+   		 border-top: 0px solid #d4d4d4;
+	}
+	
+	
+	
+	.v-table-header td, .v-table-footer td, .v-table-cell-content {
+		height: 26px;
+	}
+	
+	.v-table-resizer, .v-table-sort-indicator {
+		height: 26px;
+	}
+    .v-table-footer-container, .v-table-caption-container {
+    	min-height: 24px;
+    	padding: 8px 10px;
+    }
+	
+	.idm-requester-view .v-filterselect {
+		
+		height: 26px;
+	}
+	
+	.v-table-table .v-button-wrap .v-icon {
+		height: 14px;
+	}
+	
+	.v-button-link {
+		height: 26px;
+		padding: 0 0 0 0;
+	}
+
+	.idm-requester-view .v-formlayout-contentcell .v-textfield {	   
+		width: 26em;
+		height: 30px;
+	}
+	
+	.idm-requester-view .v-datefield {
+	    padding: 2px;
+		height: 30px;
+		width: 26em;
+	}
+
+	.idm-requester-view .v-formlayout .v-formlayout-captioncell {
+		vertical-align: middle;
+	}
+	
+	.idm-requester-view .form-upload {
+		padding-top: 0px;
+	}
+	
+	.idm-requester-view .v-caption-form-upload {
+		border-bottom: 1px solid darkblue;
+	}
+		
+	.idm-requester-view .v-caption-form-upload .v-captiontext {
+		font-size: 12px;
+		color: darkblue;
+	}
+	
+	.idm-requester-view .upload-wrapper .v-caption-form-upload .v-captiontext > span {
+		color: darkgrey;
+		display: none;
+	}
+	
+	.idm-requester-view .upload-wrapper:hover .v-caption-form-upload .v-captiontext > span {
+		display: inline-block;
+	}
+	
+	.idm-requester-view .iz-wrapper .v-label-status-panel > span {
+		color: darkgrey;
+		display: none;
+	}
+	
+	.idm-requester-view .iz-wrapper:hover .v-label-status-panel > span {
+		display: inline-block;
+	}
+	
+	.idm-requester-view .tx-wrapper .v-label-status-panel > span {
+		color: darkgrey;
+		display: none;
+	}
+	
+	.idm-requester-view .tx-wrapper:hover .v-label-status-panel > span {
+		display: inline-block;
+	}
+	
+	
+	.idm-requester-view .v-caption {
+		font-size: 12px;	
+	}
+	
+	
+	
+	.idm-requester-view .v-label-status-panel {
+		color: darkblue;
+		font-size: 12px;
+		border-bottom: 1px solid darkblue;
+		margin-top: 20px;
+		margin-bottom: 5px;
+	}
+	
+	
+	
+	.idm-requester-view .v-table-row.v-selected .v-button-caption, .idm-requester-view .v-table-row-odd.v-selected .v-button-caption {
+    	color:white; 
+    }  
+    
+    .idm-requester-view .v-table-cell-wrapper {
+		font-size: 10px;
+	}
+	
+	
+	.idm-requester-view  .v-table-cell-content-style-me-out {
+		overflow: visible;
+	}
+	.idm-requester-view  .v-table-cell-content-style-me-out .v-table-cell-wrapper {
+		overflow: visible;
+	}
+	
+	.idm-requester-view .v-table-cell-wrapper .v-label {
+		font-size: 10px;
+	}
+
+	.idm-requester-view .layout-info-bar .v-caption {
+    	display: inline-block;
+    	padding-right: 3px;
+	}
+	
+	.idm-requester-view .layout-info-bar .v-label {
+    	margin-right: 10px;
+	}
+	
+	
+	.idm-requester-view .layout-info-bar .v-textfield {
+    	height: 26px;
+	}
+	
+	.idm-requester-view .layout-info-bar .v-button {
+    	height: 26px;
+	}
+	
+	
+	.v-filterselect-suggestpopup .gwt-MenuItem-selected, .v-filterselect-suggestpopup .gwt-MenuItem {
+		font-size: 11px;
+	}
+	
+	.icon-dashboard.v-nativebutton:before, .icon-Secure > .v-button-wrap:before, .icon-Secure.v-label:before, .v-menubar-menuitem-icon-Secure:before {
+    	content: "⇄";
+	}
+	
+	.idm-requester-view .business-justification-row-header {
+		color: darkred;
+	}
+	
+
+
+.v-horizontallayout-logonbtn-line .v-button-link {
+      display: block;
+      background: transparent;
+      border: none;
+      text-align: center;
+}
+
+
+.v-horizontallayout-logonbtn-line .v-button {
+      display: block;
+      background: transparent;
+      border: none;
+      text-align: center;
+}
+
+.v-horizontallayout-logonbtn-line .v-button img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 5px;
+}
+
+
+	
+	
+	
+}

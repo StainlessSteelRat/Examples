@@ -1,0 +1,205 @@
+
+@mixin haloSidebar {
+
+	.haloSidebar {
+		display: inline;
+		width: 100%;
+	}
+	
+ 	.sidebarOpened {   	
+  		padding-right: 400px !important;
+  		transition: padding-right 0.6s cubic-bezier(0.93, 0, 1, 0.3) 0s;
+ 	}
+  
+ 
+  
+ .sidebarWrapper {
+  	perspective: 2000px;
+  	height: 100%;
+  	position: absolute;
+	right: 0px;
+	top: 0px;
+  	
+  }
+  
+ .sidebar {
+  	perspective: 2000px;
+  	position: absolute;
+  	background: white;
+  	width: 800px;
+  	height: 100%;
+  	right: -400px;
+  	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  	border-left: 1px solid #DFDFDF;
+  	transform: rotateY(-90deg);
+  	overflow: hidden;
+  }
+  
+   .folderOpened {
+  		overflow: visible !important;
+  		
+   }
+  
+  
+  
+  .sidebarHeader {
+  	height: 64px;
+  	padding-top: 20px;
+	padding-left: 10px;
+  }
+  
+  .sidebarHeader .v-label { 
+  	font-weight: bold;
+  	background:  url("../icons/24/appicon60.png") no-repeat rgba(255,255,255,0.8);
+  	background-size: 32px 32px;
+  	padding-left: 36px;
+  	padding-top: 2px;
+  	height: 32px;
+  }
+  
+  .sidebar .v-tabsheet {
+  	display: block;
+  	}
+  
+  .sidebarComponent {
+  	perspective: 2000px;
+  	}
+  
+ .haloSidebar .toolbar {
+  	position: absolute;
+  	right: 10px;
+  	top: 20px;
+  	z-index: 1;
+  	width: 200px;
+  	/* background: rgba(255,255,255,0.8); */
+  }
+  
+ .haloSidebar .toolbar .v-widget {
+  	float: right;
+  }
+  
+ .haloSidebar .toolbar .v-button {
+      
+      background-size: 32px 32px;
+      height: 32px;
+      width: 32px;
+      border: none;
+      text-align: center;
+      margin-left: 10px;
+}
+ 
+.haloSidebar .toolbar .v-button img {
+     
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 5px;
+}
+
+.haloSidebar .toolbar .v-button span {
+      font-size: x-small;
+      text-shadow: #fafafa 1px 1px 0;
+     
+}
+.haloSidebar .toolbar .v-button-caption {
+	display: none;
+}
+
+.haloSidebar .toolbar .v-button .v-button-wrap, 
+.haloSidebar .toolbar .v-disabled.v-button .v-button-wrap {
+   background: transparent;
+   border: none;
+   -webkit-border-radius: 0;
+   -moz-border-radius: 0;
+   border-radius: 0;
+   -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+   box-shadow: none;
+}
+
+.haloSidebar .toolbar .v-button:active .v-button-wrap,
+.haloSidebar .toolbar .v-button.v-pressed .v-button-wrap {
+   background: transparent;
+   -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+   box-shadow: none;
+}
+
+.staticfolder {
+	width: 800px;
+	height: 100%;	
+	background: white;	
+	position: absolute;
+	backface-visibility: hidden;
+	z-index: 1;
+	overflow: hidden;
+	
+  }
+
+.staticfolderHidden {
+	width: 800px;
+	height: 100%;	
+	background: white;	
+	position: absolute;
+	backface-visibility: hidden;
+	z-index: 1;
+	overflow: hidden;
+	display: none;
+  }
+
+.staticfolder .v-csslayout {
+  	margin: 5px 5px 5px 0px;
+  	border: 1px solid #CCC;
+	height: 100%;
+	left: -400px;
+	position: relative;
+	padding: 10px;
+  }
+  
+  
+  
+  .folder {
+	width: 800px;
+	height: 100%;
+	transform: rotateY(0deg);
+	transition: transform 800ms ease 0ms;
+	background: transparent;
+	right: 400px;
+	position: absolute;
+	backface-visibility: hidden;
+	z-index: 2;
+	
+  }
+  
+  .subfolder {
+	width: 400px;
+	height: 100%;
+	background: white;
+	right: 0px;
+	position: absolute;
+	backface-visibility: hidden;
+	border: black 5px;
+	
+	
+  }
+  
+.unfolder {
+	width: 800px;
+	height: 100%;
+	transform: rotateY(180deg);
+	transition: transform 800ms ease 0ms;
+	background: white;
+	right: 400px;
+	position: absolute;
+	backface-visibility: hidden;
+	
+  }
+  
+  .unfolder .v-csslayout {
+  	margin: 5px;
+  	border: 1px solid #CCCCCC;
+	height: 100%;
+	padding: 10px;
+  }
+  
+}
+
